@@ -208,8 +208,8 @@ footer p{
 
 @media screen and (max-width: 600px) {
     .slideshowsize{
-        width: 60%;
-        height: 60%;
+        width: 80%;
+        height: 80%;
     }
 
     #typo-phone{
@@ -224,6 +224,8 @@ footer p{
         width: 85%;
     }
 
+    
+
 }
 
 /*fixes button on phones*/
@@ -236,3 +238,12 @@ footer p{
         display: none !important;
     }
 }
+
+@media screen and (max-width: 760px) {
+    .dots_nav-outside .square1_dots{
+        bottom: -40% !important;
+    }
+
+    
+}
+
