@@ -197,6 +197,14 @@ footer p{
 #typo-phone{
     display:none;
 }
+/*why doesn't it work (┛◉Д◉)┛彡┻━┻ */
+.forking-align-dumb-bitch{
+    margin-top: 10px;
+}
+
+#copyright{
+    font-size: 1rem !important;    
+}
 
 @media screen and (max-width: 600px) {
     .slideshowsize{
@@ -213,13 +221,18 @@ footer p{
 
     #about_txt{
         font-size: 1.3rem;
+        width: 85%;
     }
 
 }
 
 /*fixes button on phones*/
-@media screen and (min-height: 800px) {
+@media screen and (max-width: 700px) {
     h1{
-        margin-top: 14vh;
+        margin-top: 10vh;
+    }
+
+    #btn_meerInfo{
+        display: none !important;
     }
 }
