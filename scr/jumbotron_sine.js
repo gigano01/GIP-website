@@ -48,12 +48,12 @@ function setup() {
 
 function draw() {
   //load the page
-  
   if(!block_draw){
     if(getYPosition() > window.innerHeight){
       background(144,156,196);
       canvas.parent('tussenstuk_sine_wave_canvas');
-      document.getElementById("jumbotron_sine_wave_canvas").style.marginTop = "300px";
+      document.getElementById("jumbotron_sine_wave_canvas").style.marginTop = "314px";
+      document.getElementById("tussenstuk_sine_wave_canvas").style.marginTop = "0px";
       period = period2;
       waveSpeed = waveSpeed2;
       ISSecondwave = true;
@@ -80,6 +80,9 @@ function draw() {
     }
   }else{
     block_draw = false;
+    document.getElementById("jumbotron_sine_wave_canvas").style.marginTop = "306px";
+    document.getElementById("tussenstuk_sine_wave_canvas").style.marginTop = "300px";
+
     console.log("blocked drawing");
   }
     
@@ -131,6 +134,7 @@ function renderWave() {
 
 
 function windowResized() {
+  document.getElementById("jumbotron_sine_wave_canvas").style.marginTop = "300px";
   canvas = createCanvas(window.innerWidth, 300);
   w = width + 16;
   block_draw = true;

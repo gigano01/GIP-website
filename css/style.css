@@ -190,9 +190,20 @@ footer p{
     height: 100%;
   }
 
+#typo-phone{
+    display:none;
+}
+
 @media screen and (max-width: 600px) {
     .slideshowsize{
         width: 60%;
         height: 60%;
+    }
+
+    #typo-phone{
+        display:block !important;
+    }
+    #typo{
+        display:none;
     }
 }
