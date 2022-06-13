@@ -1,0 +1,184 @@
+/*VOOR KNOP BORDER RADIUS HAHHAHAHHAHAA*/
+
+
+/*WEBSITE OPEN ANIMATION*/
+@keyframes openn {
+    from {opacity: 0%;}
+    to {opacity: 100%}
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+#jumbotron_sine_wave_canvas{
+    margin-top: 300px;
+}
+
+body{
+    opacity: 0%;   
+}
+
+
+@font-face {
+    font-family: "Baskerville";
+    src: url('../fonts/BASKVILL.TTF');
+}
+
+@font-face {
+    font-family: "Agency";
+    src: url('../fonts/AGENCYR.TTF');
+}
+
+/*VERWIJDERD DE SCROLLBAR*/
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+p{
+    margin-bottom: 0rem;
+}
+
+
+#logo{
+    width:50%;
+    margin-top: 1.5625rem;
+}
+
+h1{
+    color:#707070;
+    margin-top: -2rem;
+    text-transform: lowercase;
+}
+
+#btn_meerInfo{
+    border-width: 0px;
+    background-color: rgb(131, 131, 131);
+    color: white;
+}
+.navbar-inner {
+    background-color:transparent;
+}
+
+.divider{
+    height: 2rem;
+    background-color: #E64143;
+}
+.red{
+    background-color: #E64143;
+}
+
+.blue{
+    background-color: rgb(41, 66, 148);
+}
+
+#about{
+    background-color: rgba(230, 65, 67, 0.55);
+    min-height: 200px;
+    
+}
+
+#onzeWerken{
+    background-color: rgb(144,156,196);
+    min-height: 200px;
+    
+}
+
+h2{
+    color: white;
+    font-size: 3.4375rem;
+    font-family: "Baskerville";
+    margin-top: 2.8125rem;
+}
+
+#about_txt{
+    margin-top: 1.25rem;
+    color:white;
+    font-size: 1.25rem;
+    padding-bottom: 10.125rem;
+    font-size: 1.6875rem;
+}
+
+h3{
+    color:white;
+    font-family: "Agency";
+}
+
+#onzeWerken{
+    padding-bottom: 50px;
+}
+
+.slideshowsize{
+    margin-top:40px;
+    
+    /*media querry controled*/
+    width: 50%;
+    height: 50%;
+}
+
+.vectoren_bot{
+    margin-top: 40px;
+}
+#comic_full_vector{
+    background-color: white;
+}
+.vector_full_height{
+    height: 100%;
+    width: 100%
+}
+
+#h3_vectoren{
+    margin-bottom: 60px;
+}
+
+
+a{
+    font-family: "Agency";
+    font-size: 1.5rem !important;
+}
+p{
+    font-family: "Agency";
+}
+
+
+#videos{
+    margin-top: 100px;
+}
+
+h4{
+    font-family: "Baskerville";
+    font-size: 3.125rem;
+}
+
+#video_description{
+    font-size: 1.25rem;
+}
+
+#typo{
+    margin-top: 50px;
+}
+
+footer{
+    background-color: #E64143;
+}
+
+footer p{
+    font-size: 30px;
+    color:white;
+}
+
+@media screen and (max-width: 600px) {
+    .slideshowsize{
+        width: 60%;
+        height: 60%;
+    }
+}
