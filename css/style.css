@@ -229,7 +229,7 @@ footer p{
 /*fixes button on phones*/
 @media screen and (max-width: 700px) {
     h1{
-        margin-top: 10vh;
+        margin-top: 12vh;
     }
 
     #btn_meerInfo{
