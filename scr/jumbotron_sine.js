@@ -182,7 +182,7 @@ var divider1 = function(sketch){
 
   sketch.setup = function(){
     var canvass = sketch.createCanvas(window.innerWidth, 32);
-    canvass.parent('kill-mee');
+    canvass.parent('divider1');
     console.log("divider 1")
     init_reinit();
   }
@@ -220,4 +220,54 @@ var divider1 = function(sketch){
   }
 }
 
+
+var divider2 = function(sketch){
+
+  let div_amount;
+  const div_width = 64;
+  const div_height = 32; //height of the divider
+  const div_spacing = 40;
+  let divs; //array containing the dividers
+
+  sketch.setup = function(){
+    var canvass = sketch.createCanvas(window.innerWidth, 32);
+    canvass.parent('divider2');
+    console.log("divider 2")
+    init_reinit();
+  }
+
+  sketch.draw = function(){
+    sketch.clear();
+    sketch.background(144,156,196);
+    sketch.fill(41, 66, 148);
+    sketch.noStroke();
+    /*sketch.rect(1, 1, 30, 30);
+    sketch.text("str", 2, 2, 10, 10);
+    console.log("urmom")*/
+    //sketch.rect(0, 0, 64, 32, 100, 100, 100, 100);
+
+      for (let index = 0; index < divs.length; index++) {
+      sketch.rect(divs[index], 0, 64, 32, 100, 100, 100, 100);
+      if(divs[index] == 0){
+        divs[(((index - 1) % div_amount) + div_amount) % div_amount] = -div_width - div_spacing;
+        
+      }
+
+      divs[index] += 1;
+    }
+  }
+
+  function init_reinit(){
+    div_amount =1 + sketch.ceil(sketch.width / ( div_spacing + div_width));
+    console.log(div_amount);
+
+    //filling in the array
+    divs = new Array(div_amount);
+    for (let index = 0; index < divs.length; index++) {
+      divs[index] = ((div_width + div_spacing) * index) - div_width;
+    }
+  }
+}
+
 new p5(divider1);
+new p5(divider2);
