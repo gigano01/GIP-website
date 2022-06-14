@@ -1,5 +1,6 @@
 //CREDIT: https://p5js.org/examples/math-sine-wave.html
-//aangepast door Noah.
+//hevig aangepast door Noah.
+//divider code credit: Noah Van Leemput
 let xspacing = 1; // Distance between each horizontal location
 let w; // Width of entire wave
 let theta = 0.0; // Start angle at 0
@@ -24,6 +25,7 @@ let block_draw = false
 let ISSecondwave = false;
 
 var canvas;
+var divider1; //devider1
 
 function getYPosition(){
   var top  = window.pageYOffset || document.documentElement.scrollTop
@@ -43,6 +45,7 @@ function setup() {
 
   //deze rare code zorgt ervoor dat de website zichtbaar word vanaf dat alles geladen is
   document.getElementById("body").style = "animation: 0.5s ease 0s 1 normal forwards running openn;"
+
     
 }
 
@@ -148,3 +151,54 @@ function windowResized() {
   }
   
 }
+
+
+
+
+var divider1 = function(sketch){
+
+  let div_amount;
+  const div_width = 64;
+  const div_height = 32; //height of the divider
+  const div_spacing = 40;
+  let divs; //array containing the dividers
+
+  sketch.setup = function(){
+    var canvass = sketch.createCanvas(window.innerWidth, 32);
+    canvass.parent('kill-mee');
+    console.log("divider 1")
+    init_reinit();
+  }
+
+  sketch.draw = function(){
+    sketch.clear();
+    sketch.background(230, 65, 67, 0.50);
+    sketch.fill(230,65,67);
+    sketch.noStroke();
+    /*sketch.rect(1, 1, 30, 30);
+    sketch.text("str", 2, 2, 10, 10);
+    console.log("urmom")*/
+    //sketch.rect(0, 0, 64, 32, 100, 100, 100, 100);
+
+      for (let index = 0; index < divs.length; index++) {
+      sketch.rect(divs[index], 0, 64, 32, 100, 100, 100, 100);
+      divs[index] += 1;
+      if(divs[index] > sketch.width){
+        divs[index] = -div_width
+      }
+    }
+  }
+
+  function init_reinit(){
+    div_amount = sketch.ceil(sketch.width / ( div_spacing + div_width));
+    console.log(div_amount);
+
+    //filling in the array
+    divs = new Array(div_amount);
+    for (let index = 0; index < divs.length; index++) {
+      divs[index] = ((div_width + div_spacing) * index) - div_width;
+    }
+  }
+}
+
+new p5(divider1);
