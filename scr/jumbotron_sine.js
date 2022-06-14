@@ -153,6 +153,23 @@ function windowResized() {
 }
 
 
+function GetScreenCordinates(obj) {
+  var p = {};
+  p.x = obj.offsetLeft;
+  p.y = obj.offsetTop;
+  while (obj.offsetParent) {
+      p.x = p.x + obj.offsetParent.offsetLeft;
+      p.y = p.y + obj.offsetParent.offsetTop;
+      if (obj == document.getElementsByTagName("body")[0]) {
+          break;
+      }
+      else {
+          obj = obj.offsetParent;
+      }
+  }
+  return p;
+}
+
 
 
 var divider1 = function(sketch){
@@ -182,15 +199,17 @@ var divider1 = function(sketch){
 
       for (let index = 0; index < divs.length; index++) {
       sketch.rect(divs[index], 0, 64, 32, 100, 100, 100, 100);
-      divs[index] += 1;
-      if(divs[index] > sketch.width){
-        divs[index] = -div_width
+      if(divs[index] == 0){
+        divs[(((index - 1) % div_amount) + div_amount) % div_amount] = -div_width - div_spacing;
+        
       }
+
+      divs[index] += 1;
     }
   }
 
   function init_reinit(){
-    div_amount = sketch.ceil(sketch.width / ( div_spacing + div_width));
+    div_amount =1 + sketch.ceil(sketch.width / ( div_spacing + div_width));
     console.log(div_amount);
 
     //filling in the array
