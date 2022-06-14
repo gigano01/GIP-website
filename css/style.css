@@ -206,7 +206,7 @@ footer p{
     font-size: 1rem !important;    
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .slideshowsize{
         width: 80%;
         height: 80%;
@@ -214,6 +214,7 @@ footer p{
 
     #typo-phone{
         display:block !important;
+        margin-top: 40px;
     }
     #typo{
         display:none;
@@ -245,5 +246,16 @@ footer p{
     }
 
     
+}
+
+/*fixes vectoren*/
+@media screen and (max-width: 768px) {
+    .img_phone_bot{
+        margin-bottom: 10px;;
+    }
+
+    .vectoren_bot{
+        margin-top: 0px;
+    }
 }
 
