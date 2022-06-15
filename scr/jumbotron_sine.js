@@ -195,7 +195,7 @@ var divider1 = function(sketch){
   }
 
   function init_reinit(){
-    div_amount =1 + sketch.ceil(sketch.width / ( div_spacing + div_width));
+    div_amount =2 + sketch.ceil(sketch.width / ( div_spacing + div_width));
     console.log(div_amount);
 
     //filling in the array
@@ -247,7 +247,7 @@ var divider2 = function(sketch){
   }
 
   function init_reinit(){
-    div_amount =1 + sketch.ceil(sketch.width / ( div_spacing + div_width));
+    div_amount =2 + sketch.ceil(sketch.width / ( div_spacing + div_width));
     console.log(div_amount);
 
     //filling in the array
