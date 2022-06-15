@@ -153,23 +153,6 @@ function windowResized() {
 }
 
 
-function GetScreenCordinates(obj) {
-  var p = {};
-  p.x = obj.offsetLeft;
-  p.y = obj.offsetTop;
-  while (obj.offsetParent) {
-      p.x = p.x + obj.offsetParent.offsetLeft;
-      p.y = p.y + obj.offsetParent.offsetTop;
-      if (obj == document.getElementsByTagName("body")[0]) {
-          break;
-      }
-      else {
-          obj = obj.offsetParent;
-      }
-  }
-  return p;
-}
-
 
 
 var divider1 = function(sketch){
@@ -181,7 +164,7 @@ var divider1 = function(sketch){
   let divs; //array containing the dividers
 
   sketch.setup = function(){
-    var canvass = sketch.createCanvas(window.innerWidth, 32);
+    var canvass = sketch.createCanvas(window.innerWidth, div_height);
     canvass.parent('divider1');
     console.log("divider 1")
     init_reinit();
@@ -197,13 +180,16 @@ var divider1 = function(sketch){
     console.log("urmom")*/
     //sketch.rect(0, 0, 64, 32, 100, 100, 100, 100);
 
-      for (let index = 0; index < divs.length; index++) {
-      sketch.rect(divs[index], 0, 64, 32, 100, 100, 100, 100);
+    for (let index = 0; index < divs.length; index++) {
+      var txt = document.getElementById("divider1");
+      var size = txt.getBoundingClientRect();
+      var smaller_size = Math.min(Math.max(div_height - size.top*0.3, 0), 13.142187500000002);
+      console.log(smaller_size)
+      
+      sketch.rect(divs[index], 0+smaller_size/2, div_width + size.top*0.13, div_height-smaller_size, 100, 100, 100, 100);
       if(divs[index] == 0){
         divs[(((index - 1) % div_amount) + div_amount) % div_amount] = -div_width - div_spacing;
-        
       }
-
       divs[index] += 1;
     }
   }
@@ -249,11 +235,11 @@ var divider2 = function(sketch){
       for (let index = 0; index < divs.length; index++) {
       sketch.rect(divs[index], 0, 64, 32, 100, 100, 100, 100);
       if(divs[index] == 0){
-        divs[(((index - 1) % div_amount) + div_amount) % div_amount] = -div_width - div_spacing;
+        divs[(((index - 1) % div_amount) + div_amount) % div_amount] = width + div_width + div_spacing;
         
       }
 
-      divs[index] += 1;
+      divs[index] -= 1;
     }
   }
 
