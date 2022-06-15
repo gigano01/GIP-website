@@ -255,8 +255,8 @@ var divider2 = function(sketch){
       var smaller_size = Math.min(Math.max(div_height - (size.top+500)*0.3, 0), 13.142187500000002);
       
       sketch.rect(divs[index], 0+smaller_size/2, div_width + (size.top+500)*0.13, div_height-smaller_size, 100, 100, 100, 100);
-      if(divs[index] == 0){
-        divs[(((index - 1) % div_amount) + div_amount) % div_amount] = width + div_width + div_spacing;
+      if(divs[index] == width - 1){
+        divs[(((index +1) % div_amount) + div_amount) % div_amount] = width + div_width + div_spacing;
       }
       divs[index] -= 1;
     }
